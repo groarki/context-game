@@ -1,20 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import './src/i18n';
 
-export default function App() {
+import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useFonts } from 'expo-font';
+
+import { ThemeProvider, useTheme } from './src/context/ThemeContext';
+import { LanguageProvider } from './src/context/LanguageContext';
+import { CharacterProvider } from './src/context/CharacterContext';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import GameScreen from './src/screens/GameScreen';
+import { Kings_Font } from './src/fonts';
+
+type Screen = 'welcome' | 'game';
+
+
+function Navigator() {
+  const [screen, setScreen] = useState<Screen>('welcome');
+  const { theme } = useTheme();
+
+  const goToMenu = () => setScreen('welcome');
+
+  const content =
+    screen === 'welcome' ? (
+      <WelcomeScreen onStart={() => setScreen('game')} />
+    ) : (
+      <GameScreen onMenu={goToMenu} />
+    );
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      {content}
+      <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  const [fontsLoaded] = useFonts({ [Kings_Font]: require('./assets/fonts/Kings-Regular.ttf') });
+
+  if (!fontsLoaded) return null;
+
+  return (
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <CharacterProvider>
+            <Navigator />
+          </CharacterProvider>
+        </LanguageProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
+  );
+}

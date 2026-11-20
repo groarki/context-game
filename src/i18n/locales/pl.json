@@ -1,0 +1,49 @@
+{
+  "welcome": {
+    "title": "Smocza Grań",
+    "namePlaceholder": "Wpisz imię...",
+    "chooseClass": "Wybierz klasę postaci",
+    "settings": "Ustawienia",
+    "currentLanguage": "Język: polski",
+    "changeLanguage": "Zmień język (English)",
+    "currentTheme": "Motyw: {theme}",
+    "changeTheme": "Zmień motyw (Jasny/Ciemny)",
+    "start": "Rozpocznij przygodę",
+    "nameRequired": "Podaj imię bohatera, aby rozpocząć."
+  },
+  "themes": {
+    "light": "jasny",
+    "dark": "ciemny"
+  },
+  "classes": {
+    "warrior": "Wojownik",
+    "mage": "Mag",
+    "rogue": "Łotrzyk"
+  },
+  "items": {
+    "potion": "mikstura leczenia"
+  },
+  "status": {
+    "greeting": "Witaj, {playerName}! Masz {hp} punktów życia, rozpocznijmy przygodę!",
+    "hp": "PŻ: {hp}/{maxHp}",
+    "class": "Klasa: {className}",
+    "inventory": "Ekwipunek: {items}",
+    "emptyInventory": "pusty"
+  },
+  "game": {
+    "restart": "Zagraj ponownie",
+    "backToMenu": "Wróć do menu"
+  },
+  "story": {
+    "start": {
+      "text": "{playerName}, {className}, wędruje przez mroczny las. Masz {hp}/{maxHp} punktów życia. Nagle drogę zastępuje ci wilk, a obok ścieżki stoi stara skrzynia.",
+      "choices": {
+        "fight": "Walcz z wilkiem (-6 PŻ)",
+        "chest": "Otwórz skrzynię"
+      }
+    },
+    "end": {
+      "text": "Przygoda dobiegła końca, {playerName}! Zostało ci {hp} z {maxHp} punktów życia. Ekwipunek: {items}."
+    }
+  }
+}

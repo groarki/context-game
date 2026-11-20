@@ -1,0 +1,49 @@
+{
+  "welcome": {
+    "title": "Dragon Ridge",
+    "namePlaceholder": "Enter your name...",
+    "chooseClass": "Choose your class",
+    "settings": "Settings",
+    "currentLanguage": "Language: English",
+    "changeLanguage": "Change language (Polski)",
+    "currentTheme": "Theme: {theme}",
+    "changeTheme": "Change theme (Light/Dark)",
+    "start": "Begin the adventure",
+    "nameRequired": "Enter your hero's name to start."
+  },
+  "themes": {
+    "light": "light",
+    "dark": "dark"
+  },
+  "classes": {
+    "warrior": "Warrior",
+    "mage": "Mage",
+    "rogue": "Rogue"
+  },
+  "items": {
+    "potion": "healing potion"
+  },
+  "status": {
+    "greeting": "Welcome, {playerName}! You have {hp} health points. Let's begin your adventure!",
+    "hp": "HP: {hp}/{maxHp}",
+    "class": "Class: {className}",
+    "inventory": "Inventory: {items}",
+    "emptyInventory": "empty"
+  },
+  "game": {
+    "restart": "Play again",
+    "backToMenu": "Back to menu"
+  },
+  "story": {
+    "start": {
+      "text": "{playerName} the {className} wanders through a dark forest. You have {hp}/{maxHp} health points. Suddenly a wolf blocks your path, and an old chest stands by the road.",
+      "choices": {
+        "fight": "Fight the wolf (-6 HP)",
+        "chest": "Open the chest"
+      }
+    },
+    "end": {
+      "text": "Your adventure is over, {playerName}! You have {hp} of {maxHp} health points left. Inventory: {items}."
+    }
+  }
+}
